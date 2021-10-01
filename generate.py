@@ -40,7 +40,7 @@ notebook = {
         'title: <required-title>\n',
         f'date: {today}\n',
         'downloads: true\n',
-        'sidebar: true\n',
+        'weight: <required-weight> See: https://github.com/pytorch-ignite/examples/issues/30\n',
         'summary: <delete if there is <!--more--> else required\n'
         'tags:\n',
         '  - <required-tag>\n',
