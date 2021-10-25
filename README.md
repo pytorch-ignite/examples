@@ -9,8 +9,8 @@ script to generate the notebook.
 **Usage:**
 
 ```sh
-# python generate.py <notebooks>...
-python generate.py yolo.ipynb
+# python generate.py <notebook-names>...
+python generate.py yolo
 # > Generated /workspace/yolo.ipynb
 ```
 

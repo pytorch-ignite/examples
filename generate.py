@@ -12,7 +12,7 @@
 #   -h, --help            show this help message and exit
 #
 # Example:
-#   python generate.py {data-iterator,fastai-lr-finder,gradient-accumulation,installation}.ipynb
+#   python generate.py {data-iterator,fastai-lr-finder,gradient-accumulation,installation}
 
 import json
 import os
@@ -41,12 +41,19 @@ notebook = {
         f'date: {today}\n',
         'downloads: true\n',
         'weight: <required-weight> See: https://github.com/pytorch-ignite/examples/issues/30\n',
-        'summary: <delete if there is <!--more--> else required\n'
+        'summary: <use either this or the `<!--more-->` tag below to provide summary for this notebook, '
+        'and delete the other>\n'
         'tags:\n',
         '  - <required-tag>\n',
         '--- -->\n',
         '\n',
-        '# title-placeholder',
+        '# title-placeholder\n',
+        '\n',
+        '<If you are not using the `summary` variable above, use this space to '
+        'provide a summary for this notebook.>\n',
+        '<Otherwise, delete the `<!--more-->` below.>',
+        '\n',
+        '<!--more -->',
       ]
     }
   ]
@@ -66,6 +73,7 @@ if __name__ == '__main__':
   )
   args = parser.parse_args()
   for name in args.notebook_names:
+    name = name + ".ipynb"
     with open(name, 'w') as fp:
       json.dump(notebook, fp, indent=2)
       print(f'Generated {os.path.join(cwd, name)}')
