@@ -40,7 +40,6 @@ notebook = {
         'title: <required-title>\n',
         f'date: {today}\n',
         'downloads: true\n',
-        'sidebar: true\n',
         'weight: <required-weight> See: https://github.com/pytorch-ignite/examples/issues/30\n',
         'summary: <use either this or the `<!--more-->` tag below to provide summary for this notebook, '
         'and delete the other>\n'
@@ -52,6 +51,7 @@ notebook = {
         '\n',
         '<If you are not using the `summary` variable above, use this space to '
         'provide a summary for this notebook.>\n',
+        '<Otherwise, delete the `<!--more-->` below.>',
         '\n',
         '<!--more -->',
       ]
