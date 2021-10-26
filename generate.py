@@ -73,7 +73,7 @@ if __name__ == '__main__':
   )
   args = parser.parse_args()
   for name in args.notebook_names:
-    if name[-6:] != ".ipynb":
+    if not name.endswith('.ipynb'):
       name = name + ".ipynb"
 
     if os.path.isfile(name):
