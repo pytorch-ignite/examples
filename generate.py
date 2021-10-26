@@ -79,16 +79,19 @@ if __name__ == '__main__':
     if os.path.isfile(name):
       with open(name) as fp:
         content = json.load(fp)
+      if content['cells'][0] == notebook['cells'][0]:
+        print(f'Frontmatter cell already exists in {os.path.join(cwd, name)}. Exiting')
 
-      for key, value in content.items():
-        if key != 'cells':
-          content[key] = notebook[key]
-        else:
-          content[key] = notebook[key] + content[key]
+      else:
+        for key, value in content.items():
+          if key != 'cells':
+            content[key] = notebook[key]
+          else:
+            content[key] = notebook[key] + content[key]
 
-      with open(name, mode='w') as f:
-        f.write(json.dumps(content, indent=2))
-        print(f'Added frontmatter to {os.path.join(cwd, name)}')
+        with open(name, mode='w') as f:
+          f.write(json.dumps(content, indent=2))
+          print(f'Added frontmatter to {os.path.join(cwd, name)}')
 
     else:
       with open(name, 'w') as fp:
