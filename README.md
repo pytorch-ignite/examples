@@ -9,9 +9,17 @@ script to generate the notebook.
 **Usage:**
 
 ```sh
-# python generate.py <notebooks>...
-python generate.py yolo.ipynb
+# python generate.py <notebook-names>...
+python generate.py yolo
 # > Generated /workspace/yolo.ipynb
 ```
+
+Alternatively, you can run `generate.py` on your existing notebooks to add the required frontmatter cell to them.
+```sh
+# If your completed tutorial is present in /workspace/yolo.ipynb
+python generate.py yolo
+# > Added frontmatter to /workspace/yolo.ipynb
+```
+This will add the necessary frontmatter cell at the top of the notebook, now you need to open it and update the values.
 
 See more in [`generate.py`](./generate.py).
