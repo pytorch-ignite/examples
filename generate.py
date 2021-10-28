@@ -53,7 +53,7 @@ notebook = {
         'provide a summary for this notebook.>\n',
         '<Otherwise, delete the `<!--more-->` below.>',
         '\n',
-        '<!--more -->',
+        '<!--more-->',
       ]
     }
   ]
