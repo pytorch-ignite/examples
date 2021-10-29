@@ -1,4 +1,4 @@
-# examples
+# PyTorch-Ignite Examples, tutorials and how-to guides
 
 Notebooks in this repo requires the essential frontmatters to be used
 when rendering on the [website](https://pytorch-ignite.ai).
