@@ -41,7 +41,7 @@ cell_front_matter = {
 def test_new_notebook_creation(name, tmp_path):
     notebook_path = os.path.join(tmp_path, name)
 
-    output = subprocess.check_output(["python", "../generate.py", notebook_path]).decode("utf-8")
+    output = subprocess.check_output(["python", "generate.py", notebook_path]).decode("utf-8")
 
     if not notebook_path.endswith(".ipynb"):
         notebook_path = notebook_path + ".ipynb"
@@ -54,7 +54,7 @@ def test_existing_blank_notebook(tmp_path):
     with open(notebook_path, "w") as f:
         f.write(new_notebook_empty)
 
-    output = subprocess.check_output(["python", "../generate.py", notebook_path]).decode("utf-8")
+    output = subprocess.check_output(["python", "generate.py", notebook_path]).decode("utf-8")
 
     assert output == f"Added frontmatter to {notebook_path}\n"
 
@@ -62,9 +62,9 @@ def test_existing_blank_notebook(tmp_path):
 def test_existing_non_empty_notebook(tmp_path):
     notebook_name = "01-getting-started.ipynb"
     notebook_path = os.path.join(tmp_path, notebook_name)
-    shutil.copyfile(os.path.join("../tutorials/beginner", notebook_name), notebook_path)
+    shutil.copyfile(os.path.join("./tutorials/beginner", notebook_name), notebook_path)
 
-    output = subprocess.check_output(["python", "../generate.py", notebook_path]).decode("utf-8")
+    output = subprocess.check_output(["python", "generate.py", notebook_path]).decode("utf-8")
 
     assert output == f"Added frontmatter to {notebook_path}\n"
 
@@ -79,10 +79,10 @@ def test_front_matter_multiple_times(name, tmp_path):
     notebook_path = os.path.join(tmp_path, name)
 
     # This will create a notebook with frontmatter
-    _ = subprocess.check_output(["python", "../generate.py", notebook_path])
+    _ = subprocess.check_output(["python", "generate.py", notebook_path])
 
     # Second call should not add frontmatter again
-    output = subprocess.check_output(["python", "../generate.py", notebook_path]).decode("utf-8")
+    output = subprocess.check_output(["python", "generate.py", notebook_path]).decode("utf-8")
 
     if not notebook_path.endswith(".ipynb"):
         notebook_path = notebook_path + ".ipynb"
