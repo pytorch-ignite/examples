@@ -79,7 +79,7 @@ if __name__ == '__main__':
     if os.path.isfile(name):
       with open(name) as fp:
         content = json.load(fp)
-      if content['cells'][0] == notebook['cells'][0]:
+      if len(content['cells']) > 0 and content['cells'][0] == notebook['cells'][0]:
         print(f'Frontmatter cell already exists in {os.path.join(cwd, name)}. Exiting')
 
       else:
