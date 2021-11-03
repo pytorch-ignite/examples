@@ -1,4 +1,4 @@
-name: Generate script tests
+name: ci
 on: [push, pull_request]
 jobs:
   Run-Tests:
