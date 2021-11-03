@@ -1,9 +1,10 @@
-name: Generate script tests
-on: [push]
+name: ci
+on: [push, pull_request]
 jobs:
   Run-Tests:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Install dependencies
         run: |
           pip install pytest
