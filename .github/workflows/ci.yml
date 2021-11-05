@@ -1,5 +1,15 @@
 name: ci
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - "generate.py"
+      - ".github/workflows/ci.yml"
+
+  pull_request:
+    paths:
+      - "generate.py"
+      - ".github/workflows/ci.yml"
+
 jobs:
   Run-Tests:
     runs-on: ubuntu-latest
