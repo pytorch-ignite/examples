@@ -149,7 +149,7 @@ def get_save_handler(config):
 
         return ClearMLSaver(dirname=config["output_path"])
 
-    return DiskSaver(config["output_path"], require_empty=False)
+    return config["output_path"]
 
 
 def load_checkpoint(resume_from):
