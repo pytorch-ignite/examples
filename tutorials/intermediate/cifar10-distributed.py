@@ -24,7 +24,7 @@ from ignite.engine import (
     create_supervised_trainer,
     create_supervised_evaluator,
 )
-from ignite.handlers import Checkpoint, DiskSaver, global_step_from_engine
+from ignite.handlers import Checkpoint, global_step_from_engine
 from ignite.metrics import Accuracy, Loss
 from ignite.utils import manual_seed, setup_logger
 
