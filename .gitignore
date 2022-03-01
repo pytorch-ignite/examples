@@ -128,5 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# PyTorch
+# How to Guide
+# Ignore generated files
 how-to-guides/MNIST/
+*.csv
